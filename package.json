@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "license": "MIT",
   "devDependencies": {
