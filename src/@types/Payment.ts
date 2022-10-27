@@ -5,6 +5,16 @@ export namespace Payment {
   export type Detailed = AlgaNews.components["schemas"]["PaymentDetailed"];
   export type Summary = AlgaNews.components["schemas"]["PaymentSummary"];
   export type Preview = AlgaNews.components["schemas"]["PaymentPreview"];
-  export type PreviewInput = AlgaNews.components["schemas"]["PaymentPreviewInput"];
+  export type PreviewInput =
+    AlgaNews.components["schemas"]["PaymentPreviewInput"];
   export type Paginated = AlgaNews.components["schemas"]["PaymentsPaginated"];
+
+  export type Query = {
+    payeeId?: number;
+    payeeEmail?: string;
+    scheduledToYearMonth?: string;
+    page?: number;
+    size?: number;
+    sort?: [keyof Summary, "asc" | "desc"];
+  };
 }
