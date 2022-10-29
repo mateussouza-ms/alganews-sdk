@@ -22,9 +22,19 @@ export class PostService extends Service {
     return this.Http.put<{}>(`/posts/${postId}/publishing`).then(this.getData);
   }
 
+  static unpublishExistingPost(postId: number) {
+    return this.Http.delete<{}>(`/posts/${postId}/publishing`).then(
+      this.getData
+    );
+  }
+
   static updateExistingPost(postId: number, post: Post.Input) {
     return this.Http.put<Post.Detailed>(`/posts/${postId}`, post).then(
       this.getData
     );
+  }
+
+  static removeExistingPost(postId: number) {
+    return this.Http.delete<{}>(`/posts/${postId}`).then(this.getData);
   }
 }
