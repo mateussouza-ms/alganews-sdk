@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { handleAxiosResponseError } from "./utils/handleAxiosResponseError";
-import { handleAxiosResponseSuccess } from "./utils/HandleAxiosResponseSuccess";
+import { handleAxiosResponseSuccess } from "./utils/handleAxiosResponseSuccess";
 
 const Http = axios.create();
 
