@@ -25,7 +25,7 @@ export class UserService extends Service {
   }
 
   static getAllUsers(query?: User.Query) {
-    return this.Http.get<User.Summary>(`/users${query}`).then(this.getData);
+    return this.Http.get<User.Summary[]>(`/users${query}`).then(this.getData);
   }
 
   static insertNewUser(user: User.Input) {
