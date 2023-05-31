@@ -41,17 +41,17 @@ export function handleAxiosResponseError(error: AxiosError<ErrorData>) {
       case ERRORS.INCOMPREHENSIBLE_MESSAGE:
         throw new IncomprehensibleMessageError(data);
     }
-
-    throw new GenericError({
-      detail: response?.data.detail || error.message || "Erro desconhecido",
-      status: response?.status || 500,
-      userMessage:
-        response?.data.userMessage ||
-        response?.data.detail ||
-        "Erro desconhecido",
-      timestamp: response?.data.timestamp || "",
-      title: response.data.title || "Erro desconhecido",
-      type: "GenericError",
-    });
   }
+
+  throw new GenericError({
+    detail: response?.data.detail || error.message || "Erro desconhecido",
+    status: response?.status || 500,
+    userMessage:
+      response?.data.userMessage ||
+      response?.data.detail ||
+      "Erro desconhecido",
+    timestamp: response?.data.timestamp || "",
+    title: response?.data?.title || "Erro desconhecido",
+    type: "GenericError",
+  });
 }
